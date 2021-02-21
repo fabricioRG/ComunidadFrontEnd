@@ -9,4 +9,6 @@ export class User {
     rolUsuario: string | undefined;
     ciudad: string | undefined;
     estado: string | undefined;
+    
+    constructor(){}
 }
