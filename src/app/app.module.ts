@@ -21,9 +21,15 @@ import { DataService } from './data.service';
 
 // main layout
 import { NavigationModule } from './main-layout/navigation/navigation.module';
+import { LoginComponent } from './sesion/login/login.component';
 
 const routes: Route[] = [
   { path: '', pathMatch: 'full', redirectTo: 'dashboards/v1' },
+  { path: 'sesion', children:
+    [
+      { path: 'login', component: LoginComponent },
+    ]
+  },
   { path: 'dashboards', children:
     [
       { path: 'v1', component: Dashboard1Component },
@@ -52,7 +58,8 @@ const routes: Route[] = [
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent
   ],
   imports: [
     AgmCoreModule.forRoot({
